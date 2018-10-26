@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlashCards.Logic
+namespace FlashCards.Data
 {
     public class Class1
     {

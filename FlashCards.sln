@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28218.60
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards.Logic", "FlashCards.Logic\FlashCards.Logic.csproj", "{2454BC14-B523-4D36-BA8F-BF0E56E863AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards.Avalonia", "FlashCards.Avalonia\FlashCards.Avalonia.csproj", "{12E40091-5637-4F74-9FDB-37BC64666FF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards.Wpf", "FlashCards.Wpf\FlashCards.Wpf.csproj", "{C59B1D57-DE4F-4BCF-944D-17B0EA210F29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards.Tests", "FlashCards.Tests\FlashCards.Tests.csproj", "{086A1E2D-3C0F-4333-B719-441A696E5AE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards.SharedLogic", "FlashCards.SharedLogic\FlashCards.SharedLogic.csproj", "{6750F694-E981-46C6-90E6-97584150B491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards.Data", "FlashCards.Data\FlashCards.Data.csproj", "{8494A1F0-3842-4D86-9389-A64E223F3E8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +19,28 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2454BC14-B523-4D36-BA8F-BF0E56E863AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2454BC14-B523-4D36-BA8F-BF0E56E863AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2454BC14-B523-4D36-BA8F-BF0E56E863AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2454BC14-B523-4D36-BA8F-BF0E56E863AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E40091-5637-4F74-9FDB-37BC64666FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E40091-5637-4F74-9FDB-37BC64666FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E40091-5637-4F74-9FDB-37BC64666FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E40091-5637-4F74-9FDB-37BC64666FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C59B1D57-DE4F-4BCF-944D-17B0EA210F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C59B1D57-DE4F-4BCF-944D-17B0EA210F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C59B1D57-DE4F-4BCF-944D-17B0EA210F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C59B1D57-DE4F-4BCF-944D-17B0EA210F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086A1E2D-3C0F-4333-B719-441A696E5AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086A1E2D-3C0F-4333-B719-441A696E5AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086A1E2D-3C0F-4333-B719-441A696E5AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086A1E2D-3C0F-4333-B719-441A696E5AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6750F694-E981-46C6-90E6-97584150B491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6750F694-E981-46C6-90E6-97584150B491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6750F694-E981-46C6-90E6-97584150B491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6750F694-E981-46C6-90E6-97584150B491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8494A1F0-3842-4D86-9389-A64E223F3E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8494A1F0-3842-4D86-9389-A64E223F3E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8494A1F0-3842-4D86-9389-A64E223F3E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8494A1F0-3842-4D86-9389-A64E223F3E8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {692373BF-1A1C-40C2-B9CA-DAE2A716D357}
 	EndGlobalSection
 EndGlobal
