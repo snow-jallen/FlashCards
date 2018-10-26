@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28218.60
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCards.Logic", "FlashCards.Logic\FlashCards.Logic.csproj", "{2454BC14-B523-4D36-BA8F-BF0E56E863AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2454BC14-B523-4D36-BA8F-BF0E56E863AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2454BC14-B523-4D36-BA8F-BF0E56E863AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2454BC14-B523-4D36-BA8F-BF0E56E863AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2454BC14-B523-4D36-BA8F-BF0E56E863AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {692373BF-1A1C-40C2-B9CA-DAE2A716D357}
+	EndGlobalSection
+EndGlobal
