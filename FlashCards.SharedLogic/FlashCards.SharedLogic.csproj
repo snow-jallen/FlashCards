@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FlashCards.Data\FlashCards.Data.csproj" />
+    <ProjectReference Include="..\FlashCards.Interfaces\FlashCards.Types.csproj" />
   </ItemGroup>
 
 </Project>

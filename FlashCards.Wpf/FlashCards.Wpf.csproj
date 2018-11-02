@@ -98,6 +98,10 @@
       <Project>{8494a1f0-3842-4d86-9389-a64e223f3e8a}</Project>
       <Name>FlashCards.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FlashCards.Interfaces\FlashCards.Types.csproj">
+      <Project>{af7350b8-9237-4f22-be02-b7a9f8e5b870}</Project>
+      <Name>FlashCards.Types</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FlashCards.SharedLogic\FlashCards.SharedLogic.csproj">
       <Project>{6750f694-e981-46c6-90e6-97584150b491}</Project>
       <Name>FlashCards.SharedLogic</Name>

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FlashCards.Interfaces\FlashCards.Types.csproj" />
     <ProjectReference Include="..\FlashCards.SharedLogic\FlashCards.SharedLogic.csproj" />
   </ItemGroup>
 

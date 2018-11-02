@@ -1,6 +1,7 @@
-﻿using System;
+﻿using FlashCards.Types;
+using System;
 
-namespace FlashCards.SharedLogic
+namespace FlashCards.Types
 {
     public class Card
     {
