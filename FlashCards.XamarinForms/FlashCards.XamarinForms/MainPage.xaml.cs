@@ -13,5 +13,10 @@ namespace FlashCards.XamarinForms
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            btnButton1.Text = DateTime.Now.ToString();
+        }
     }
 }

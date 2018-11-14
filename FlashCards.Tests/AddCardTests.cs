@@ -37,5 +37,21 @@ namespace Tests
             var result = cardRepo.AddCard(c);
             result.Should().BeFalse();
         }
+
+        [Test]
+        public void AddCardViaAddCardViewModel()
+        {
+            var dataStoreMock = new Mock<IDataStore>();
+            var cardRepo = new CardRepository(dataStoreMock.Object);
+            var addCardVM = new AddCardViewModel(cardRepo);
+
+            addCardVM.Title = "title";
+            addCardVM.Text = "text";
+            addCardVM.Hint = "hint";
+
+            addCardVM.AddCard.Execute(this);
+
+            addCardVM.IsClosed.Should().BeTrue();
+        }
     }
 }

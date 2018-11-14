@@ -1,6 +1,8 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using System;
+using Windows.UI.Popups;
 
 namespace FlashCards.Avalonia.Views
 {
@@ -17,6 +19,11 @@ namespace FlashCards.Avalonia.Views
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        public void myButton_Click(object sender, EventArgs e)
+        {
+            var msg = new MessageDialog("this is my message");
         }
     }
 }

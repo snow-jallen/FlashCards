@@ -7,7 +7,10 @@
   <Design.DataContext>
     <vm:MainWindowViewModel/>
   </Design.DataContext>
-  
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-  
+
+  <StackPanel>
+    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Button Content="Add Card" Command="{Binding AddCard}" />
+    <Button x:Name="myButton" Click="myButton_Click" />
+  </StackPanel>
 </Window>
