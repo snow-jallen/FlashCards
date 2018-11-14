@@ -23,6 +23,10 @@ namespace FlashCards.Wpf
         public MainWindow()
         {
             InitializeComponent();
+            var dataStore = new Data.SqliteDataStore();
+            dataStore.AddCard(new Types.Card("title", "fulltext", $"hint @ {DateTime.Now}"));
+            var cards = dataStore.GetAllCards();
+            System.Diagnostics.Debug.WriteLine($"I found {cards.Count()} cards!");
         }
     }
 }
