@@ -7,14 +7,28 @@
     <StackLayout HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
         <!-- Place new controls here -->
-        <Label Text="...Is this live?! - it is!"
+        <Label Text="Add a Flash Card"
                FontAttributes="Bold"
                FontSize="Large" />
         <Entry HeightRequest="50"
-               x:Name="txtEntry" />
-        <Button Clicked="Button_Clicked"
-                x:Name="btnButton1"
-                Text="Click Me!" />
+               Placeholder="Title"
+               Text="{Binding Title}" />
+        <Entry HeightRequest="50"
+               Placeholder="Full Text"
+               Text="{Binding FullText}" />
+        <Entry HeightRequest="50"
+               Placeholder="Hint"
+               Text="{Binding Hint}" />
+        <Button Command="{Binding AddCardCommand}"
+                Text="Add Card" />
+        <ListView ItemsSource="{Binding Cards}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}"
+                              Detail="{Binding Hint}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </StackLayout>
 

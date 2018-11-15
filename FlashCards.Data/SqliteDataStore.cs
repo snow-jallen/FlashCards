@@ -9,10 +9,12 @@ namespace FlashCards.Data
     public class SqliteDataStore : IDataStore
     {
         private readonly FlashCardsContext context;
+        private readonly string dbPath;
 
-        public SqliteDataStore()
+        public SqliteDataStore(string dbPath)
         {
-            context = new FlashCardsContext();
+            this.dbPath = dbPath ?? throw new ArgumentNullException(nameof(dbPath));
+            context = new FlashCardsContext(dbPath);
         }
 
         public void AddCard(Card c)
@@ -30,20 +32,27 @@ namespace FlashCards.Data
     class FlashCardsContext : DbContext
     {
         private static bool _created = false;
+        private readonly string dbPath;
 
-        public FlashCardsContext()
+        public FlashCardsContext(string dbPath)
         {
+            this.dbPath = dbPath ?? throw new ArgumentNullException(nameof(dbPath));
+
             if (!_created)
             {
                 _created = true;
-                //Database.EnsureDeleted();
                 Database.EnsureCreated();
-
             }
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionbuilder)
         {
-            optionbuilder.UseSqlite(@"Data Source=flashcards.db");
+            optionbuilder.UseSqlite($@"Data Source={dbPath}");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Card>()
+                .HasKey(c => c.Id);
         }
 
         public DbSet<Card> Cards { get; set; }

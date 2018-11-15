@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlashCards.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,9 @@ namespace FlashCards.XamarinForms
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        public MainPage(MainPageViewModel vm) : this()
         {
-            btnButton1.Text = DateTime.Now.ToString();
+            BindingContext = vm;
         }
     }
 }
