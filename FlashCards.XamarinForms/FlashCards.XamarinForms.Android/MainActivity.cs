@@ -6,6 +6,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
+using Plugin.Toasts;
+using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
 
 namespace FlashCards.XamarinForms.Droid
 {
@@ -18,8 +22,35 @@ namespace FlashCards.XamarinForms.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            DependencyService.Register<ToastNotification>();
+            ToastNotification.Init(this);
+            
+            LoadApplication(new App(new AndroidNavigation()));
+        }
+
+        public override void OnBackPressed()
+        {
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            {
+                System.Diagnostics.Debug.WriteLine("Android back button: there are some pages in the popup stack");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Android back button: there are not any pages in the popup stack");
+            }
+        }
+    }
+
+    public class AndroidNavigation : INavigationService
+    {
+        public async Task<string> ShowPopupAsync(string prompt)
+        {
+            await PopupNavigation.Instance.PushAsync(new PopupPage());
+            return null;
         }
     }
 }

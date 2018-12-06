@@ -4,6 +4,8 @@ using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 using System.Data;
+using System.Collections.Generic;
+using System;
 
 namespace Tests
 {
@@ -53,5 +55,46 @@ namespace Tests
 
             addCardVM.IsClosed.Should().BeTrue();
         }
+
+        [Test]
+        public void testWithMock()
+        {
+            var cards = new List<Card>();
+            var mock = new Mock<IDataStore>();
+            mock.Setup(m => m.AddCard(null))
+                .Callback(() => throw new ArgumentNullException("card"));
+            mock.Setup(m => m.AddCard(It.IsAny<Card>()))
+                .Callback<Card>(c => cards.Add(c));
+            mock.Setup(m => m.GetAllCards())
+                .Returns(cards);
+         
+        }
+
+    }
+
+    public class BogusDataStore : IDataStore
+    {
+        public BogusDataStore()
+        {
+            cards = new List<Card>();
+        }
+
+        private List<Card> cards;
+
+        public void AddCard(Card c)
+        {
+
+            cards.Add(c);
+        }
+
+        public IEnumerable<Card> GetAllCards()
+        {
+            return cards;
+        }
+    }
+
+    public interface ITest
+    {
+        event EventHandler MyEvent;
     }
 }

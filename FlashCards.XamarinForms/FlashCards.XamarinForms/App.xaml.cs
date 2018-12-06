@@ -2,6 +2,7 @@
 using FlashCards.Types;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace FlashCards.XamarinForms
     public partial class App : Application
     {
         IDataStore dataStore;
-        public App()
+        public App(INavigationService navigationService)
         {
             InitializeComponent();
 
@@ -31,8 +32,8 @@ namespace FlashCards.XamarinForms
                     break;
             }
             dataStore = new SqliteDataStore(dbPath);
-
-            MainPage = new MainPage(new MainPageViewModel(dataStore));
+            
+            MainPage = new MainPage(new MainPageViewModel(dataStore, navigationService));
         }
 
         protected override void OnStart()
@@ -50,4 +51,9 @@ namespace FlashCards.XamarinForms
             // Handle when your app resumes
         }
     }
+
+    public interface INavigationService
+    {
+        Task<String> ShowPopupAsync(string prompt);
+    }    
 }

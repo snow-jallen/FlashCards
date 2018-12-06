@@ -10,6 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.5.180" />
+    <PackageReference Include="Toasts.Forms.Plugin" Version="3.3.2" />
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
   </ItemGroup>
 
@@ -17,5 +19,11 @@
     <ProjectReference Include="..\..\FlashCards.Data\FlashCards.Data.csproj" />
     <ProjectReference Include="..\..\FlashCards.Interfaces\FlashCards.Types.csproj" />
     <ProjectReference Include="..\..\FlashCards.SharedLogic\FlashCards.SharedLogic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="PopupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
